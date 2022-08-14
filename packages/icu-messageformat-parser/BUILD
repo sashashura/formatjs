@@ -45,7 +45,12 @@ jest_test(
         "tests/**/*.tsx",
         "tests/**/*.snap",
     ]),
-    deps = SRC_DEPS,
+    deps = [
+        "//:node_modules/@types/lodash",
+        "//:node_modules/fast-glob",
+        "//:node_modules/lodash",
+        "//packages/icu-messageformat-parser-tests:test-cases-copy",
+    ] + SRC_DEPS,
 )
 
 js_binary(
